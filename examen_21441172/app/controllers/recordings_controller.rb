@@ -3,6 +3,10 @@ class RecordingsController < ApplicationController
         @recordings = Recording.all
     end
 
+    def cosa 
+        @locations = Location.all
+    end
+    
     def create
         @location = Location.find(params[:location_id])
         @recording = @location.recordings.create(recording_params)
