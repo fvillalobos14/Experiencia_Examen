@@ -1,8 +1,28 @@
-
+<h3>Location Info and Recordings</h3>
+<br>
 <p>
   <strong>Name:</strong>
   <%= @location.name %>
 </p>
+<br>
+<h4>Recordings</h4>
+<%= render @location.recordings %>
+<br>
+<h4>Add a recording:</h4>
+<%= form_with(model: [ @location, @location.recordings.build ], local: true) do |form| %>
+  <p>
+    <%= form.label :temp %><br>
+    <%= form.text_field :temp %>
+  </p>
+  <p>
+  <p>
+    <%= form.label :status %><br>
+    <%= form.text_area :status %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
 
 <%= link_to 'Go Back', locations_path %> |
 <%= link_to 'Edit', edit_location_path(@location) %> 

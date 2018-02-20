@@ -1,0 +1,25 @@
+
+<p>
+  <strong>Name:</strong>
+  <%= @location.name %>
+</p>
+ 
+ 
+<h2>Add a recording:</h2>
+<%= form_with(model: [ @location, @location.recordings.build ], local: true) do |form| %>
+  <p>
+    <%= form.label :temp %><br>
+    <%= form.text_area :temp %>
+  </p>
+  <p>
+  <p>
+    <%= form.label :status %><br>
+    <%= form.text_field :status %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+ 
+<%= link_to 'Edit', edit_location_path(@location) %> |
+<%= link_to 'Go Back', locations_path %>
