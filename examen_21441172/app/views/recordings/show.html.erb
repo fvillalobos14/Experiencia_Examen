@@ -1,25 +1,14 @@
+<h3>Recording Info</h3>
+<br>
+<p>
+  <strong>Temp:</strong>
+  <%= @recording.temp %>
+</p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @location.name %>
+  <strong>Status:</strong>
+  <%= @recording.status %>
 </p>
- 
- 
-<h2>Add a recording:</h2>
-<%= form_with(model: [ @location, @location.recordings.build ], local: true) do |form| %>
-  <p>
-    <%= form.label :temp %><br>
-    <%= form.text_area :temp %>
-  </p>
-  <p>
-  <p>
-    <%= form.label :status %><br>
-    <%= form.text_field :status %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
- 
-<%= link_to 'Edit', edit_location_path(@location) %> |
-<%= link_to 'Go Back', locations_path %>
+
+<%= link_to 'Edit', edit_location_recording_path(@recording) %> |
+<%= link_to 'Go Home', location_recording_path %>
